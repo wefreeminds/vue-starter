@@ -69,9 +69,9 @@ export const SSRRoutes = (app: Express.Application): any => {
         render('/not-found');
       } else if (err && err.code === 302) {
         const redirectUrl = URL.format({
-          protocol: req.protocol,
-          host: req.get('host'),
-        }) + err.path;
+                                         protocol: req.protocol,
+                                         host:     req.get('host'),
+                                       }) + err.path;
         res.redirect(302, redirectUrl);
         res.send();
       } else {
